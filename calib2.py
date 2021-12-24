@@ -66,7 +66,7 @@ print("\ndist :")
 print(dist)
 
 
-img = cv2.imread('0.jpg',1)
+img = cv2.imread('cam1_images/0.jpg',1)
 
 dst = cv2.undistort(img, mtx, dist, None, None)
 
