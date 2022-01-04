@@ -9,3 +9,6 @@ GUI for camera caliberation. You can adjust camera matrix and distortion coeffic
 
 ## Manual caliberation
 ```python3 gui_calib.py```
+
+## Medium post
+[https://jerin-electronics.medium.com/manual-camera-caliberation-d939f9cbecfb](https://jerin-electronics.medium.com/manual-camera-caliberation-d939f9cbecfb)
