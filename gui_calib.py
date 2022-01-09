@@ -75,8 +75,9 @@ class Fisheye:
         # Show some stuff
         self.on_trackbar(0)
         # Wait until user press some key
-        k = cv2.waitKey()
         print('press s to save')
+        k = cv2.waitKey()
+        
         if k==ord('s'): #press s to save
             mtx, dist = self.get_track_vals()
             print('\nmtx:\n',mtx)
