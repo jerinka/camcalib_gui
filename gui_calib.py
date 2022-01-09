@@ -5,6 +5,8 @@ import numpy as np
 import argparse
 np.set_printoptions(suppress=True)
 
+WINDOW_NAME = 'cam calib'
+
 def get_track_vals():
     fx = cv2.getTrackbarPos("fx",WINDOW_NAME)-1000
     fy = cv2.getTrackbarPos("fy",WINDOW_NAME)-1000
@@ -29,11 +31,10 @@ def on_trackbar(val):
     cv2.imshow(WINDOW_NAME, dst)
     
 
-if __name__ == '__main__':
-
-    img = cv2.imread('cam1_images/0.jpg',1)
-    WINDOW_NAME = 'cam calib'
-
+def fisheye_gui(img):
+    """GUI for fishe eye correction
+    Returns camera matrix and distortion coeffs
+    """
     try:
         mtx = np.load('mtx.npy')
         dist = np.load('dist.npy')
@@ -78,5 +79,19 @@ if __name__ == '__main__':
         print('\ndist:\n',dist)
         np.save('mtx.npy',mtx)
         np.save('dist.npy',dist,'\n')
+    
+    return mtx, dist
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-p', '--path', type=str, default='cam1_images/0.jpg', help='input image path')
+    args = parser.parse_args()
+    print(args)
+    
+    img = cv2.imread(args.path,1)
+    fisheye_gui(img)
+    
+
+
         
     
