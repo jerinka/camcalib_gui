@@ -2,7 +2,7 @@
 GUI for camera caliberation. You can adjust camera matrix and distortion coefficients yourself, instead of calculating it. 
 
 # Cloning
-```git clone https://github.com/jerinka/fisheye_gui```
+```git clone https://github.com/jerinka/camcalib_gui```
 
 ## Checker pattern based caliberation
 ```python3 checker_calib.py```
